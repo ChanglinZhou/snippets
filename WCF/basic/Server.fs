@@ -4,7 +4,7 @@ open System.ServiceModel.Description
 open System.Runtime.Serialization
 open System.Diagnostics
 
-[<DataContract(Namespace="http://www.scottseely.com/WCFDemo")>]
+[<DataContract(Namespace="http://www.someplace.com/WCFDemo")>]
 type Name() =
     let mutable _firstName : string = String.Empty
     let mutable _lastName : string = String.Empty
@@ -26,7 +26,7 @@ type Name() =
         and set(value) = _middleInitial <- value
 
 [<ServiceContract(Namespace=
-    "http://www.scottseely.com/WCFDemo")>]
+    "http://www.someplace.com/WCFDemo")>]
 type ISimpleService =
     [<OperationContract>]
     abstract member MyRequestReplyMessage : fullName : Name -> string
